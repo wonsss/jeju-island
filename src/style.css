@@ -7,6 +7,10 @@ header {
 }
 
 nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,6 +18,7 @@ nav {
   max-width: 192rem;
   height: 9.4rem;
   padding: 0 20rem;
+  background: var(--linkbrary-bg, #f0f6ff);
 }
 
 .hero-header {
@@ -22,6 +27,7 @@ nav {
   align-items: center;
   row-gap: 4rem;
   padding-top: 7rem;
+  margin-top: 9.4rem;
 }
 
 .cta {
