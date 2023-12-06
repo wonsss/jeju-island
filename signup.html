@@ -1,22 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="utf-8" />
     <title>회원가입</title>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
-    />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
 
     <link rel="stylesheet" href="./src/signup.css" />
   </head>
   <body>
     <div class="header">
       <div class="header__logo">
-        <a href="/"
-          ><img src="./images/logo.svg" alt="홈으로 연결된 Linkbrary 로고"
-        /></a>
+        <a href="/"><img src="./images/logo.svg" alt="홈으로 연결된 Linkbrary 로고" /></a>
       </div>
       <div class="header__content">
         <p class="header__content__p">이미 회원이신가요?</p>
@@ -25,15 +19,15 @@
     </div>
     <div class="signin_layout">
       <form id="login-form" action="">
-        <label for="id">이메일</label>
-        <input type="text" name="email" />
+        <label for="email">이메일</label>
+        <input type="text" name="email" id="email" />
 
         <label for="password">비밀번호 </label>
-        <input type="password" name="password" />
+        <input type="password" name="password" id="password" />
         <div class="passwordchk">
           <label for="passwordchk">비밀번호 확인</label>
 
-          <input type="password" name="passwordchk" />
+          <input type="password" name="passwordchk" id="passwordchk" />
           <p class="login_form__passwordchk__p">비밀번호가 다릅니다.</p>
         </div>
         <input type="submit" value="회원가입" />
@@ -42,12 +36,8 @@
     <div class="singin_oauth">
       <p>다른 방식으로 가입하기</p>
       <div class="signin_oauth__icon">
-        <a href="https://www.google.com" target="_blank"
-          ><img src="images/signin/google.png" alt=""
-        /></a>
-        <a href="https://www.kakaocorp.com/page" target="_blank"
-          ><img src="images/signin/kakao.png" alt=""
-        /></a>
+        <a href="https://www.google.com" target="_blank"><img src="images/signin/google.png" alt="" /></a>
+        <a href="https://www.kakaocorp.com/page" target="_blank"><img src="images/signin/kakao.png" alt="" /></a>
       </div>
     </div>
   </body>
