@@ -18,7 +18,6 @@ nav {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 192rem;
   height: 9.4rem;
   padding: 0 20rem;
   background: var(--linkbrary-bg, #f0f6ff);
@@ -142,6 +141,20 @@ section:nth-of-type(even) {
   grid-area: image;
   width: 55rem;
   height: 45rem;
+}
+
+/* mobie */
+@media screen AND (min-width: 357px) and (max-width: 767px) {
+}
+/* tablet */
+@media screen AND (min-width: 768px) AND (max-width: 1199px) {
+  nav a:first-child {
+    margin-left: 32px;
+  }
+
+  nav a:last-of-type {
+    margin-right: 32px;
+  }
 }
 
 footer {
