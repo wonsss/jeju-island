@@ -306,7 +306,7 @@ footer {
   }
 
   .footer-box {
-    justify-items: center;
+    justify-items: start;
     align-content: space-between;
     row-gap: 6rem;
     padding: 3.2rem 3.2rem 6.4rem 3.2rem;
@@ -315,5 +315,9 @@ footer {
       'footer-links sns'
       'copyright .'
       /1fr 1fr;
+  }
+
+  .footer-box > .sns {
+    justify-self: center;
   }
 }
