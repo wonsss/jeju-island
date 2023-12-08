@@ -270,9 +270,9 @@ footer {
   }
 
   .hero-image {
-    width: 30.3rem;
-    height: 17.9rem;
-    flex-shrink: 0;
+    width: 100%;
+    height: auto;
+    padding: 0rem 3.2rem;
   }
 
   section:nth-of-type(odd),
@@ -302,6 +302,6 @@ footer {
 
   .content-image {
     width: 32.5rem;
-    height: 26.6;
+    height: 26.6rem;
   }
 }
