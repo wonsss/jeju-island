@@ -136,3 +136,28 @@ input ~ label {
   align-items: center;
   gap: 16px;
 }
+
+/* mobie */
+@media screen AND (min-width: 357px) and (max-width: 767px) {
+  body {
+    padding: 12rem 3.2rem;
+  }
+
+  input {
+    width: 100%;
+    max-width: 400px;
+  }
+  .content_area {
+    width: 100%;
+    max-width: 400px;
+  }
+  .login_btn {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .social_login {
+    width: 100%;
+    max-width: 400px;
+  }
+}
