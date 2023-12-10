@@ -1,4 +1,7 @@
 @import 'reset.css';
+:root {
+  --linkbrary-bg: #f0f6ff;
+}
 
 header {
   display: flex;
