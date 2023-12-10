@@ -143,21 +143,16 @@ input ~ label {
     padding: 12rem 3.2rem;
   }
 
-  input {
-    width: 100%;
-    max-width: 400px;
-  }
-  .content_area {
-    width: 100%;
-    max-width: 400px;
-  }
-  .login_btn {
-    width: 100%;
-    max-width: 400px;
+  .signin_layout,
+  .singin_oauth {
+    margin-left: 32px;
+    margin-right: 32px;
   }
 
-  .social_login {
-    width: 100%;
-    max-width: 400px;
+  .signin_layout input[type='text'],
+  .signin_layout input[type='password'],
+  .signin_layout input[type='submit'],
+  .signin_oauth__icon a {
+    width: calc(100% - 64px);
   }
 }

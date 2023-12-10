@@ -130,7 +130,7 @@ input ~ label {
   margin-bottom: 30px;
 }
 
-.singin_oauth {
+.singup_oauth {
   width: 400px;
   display: flex;
   flex-direction: row;
@@ -143,7 +143,7 @@ input ~ label {
   background: var(--linkbrary-gray-10, #e7effb);
 }
 
-.singin_oauth > p {
+.singup_oauth > p {
   color: var(--linkbrary-gray-100, #373740);
   font-size: 14px;
   font-style: normal;
@@ -151,7 +151,7 @@ input ~ label {
   line-height: normal;
 }
 
-.signin_oauth__icon {
+.signup_oauth__icon {
   display: flex;
   justify-content: space-between;
   align-items: center;
