@@ -1,4 +1,5 @@
 @import 'reset.css';
+@import 'color.css';
 
 body {
   background: var(--linkbrary-bg, #f0f6ff);
