@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <title>로그인</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <script src="https://kit.fontawesome.com/11eb1848af.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="/assets/css/signin.css" />
   </head>
@@ -21,8 +22,13 @@
       <form id="login-form" action="">
         <label for="email">이메일</label>
         <input type="text" name="email" id="email" />
-        <label for="password">비밀번호 </label>
-        <input type="password" name="password" id="password" />
+        <div class="pw-input-box">
+          <label for="password">비밀번호 </label>
+          <input type="password" name="password" id="password" />
+          <button class="toggle-password" type="button">
+            <i class="fa-solid fa-eye"></i>
+          </button>
+        </div>
         <input type="submit" value="로그인" />
       </form>
     </div>
