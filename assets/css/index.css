@@ -1,7 +1,5 @@
 @import 'reset.css';
-:root {
-  --linkbrary-bg: #f0f6ff;
-}
+@import 'color.css';
 
 header {
   display: flex;
@@ -22,8 +20,12 @@ nav {
   align-items: center;
 
   height: 9.4rem;
-  padding: 0 20rem;
+  padding: 2rem 20rem;
   background: var(--linkbrary-bg, #f0f6ff);
+}
+
+nav a {
+  flex-shrink: 0;
 }
 
 .hero-header {
@@ -189,14 +191,10 @@ footer {
 @media screen AND (min-width: 768px) AND (max-width: 1199px) {
   nav {
     justify-content: space-evenly;
-    padding: 0 3.2rem;
+    padding: 2rem 20rem;
   }
   nav a:first-child {
     margin-right: 43rem;
-  }
-
-  nav a {
-    flex-shrink: 0;
   }
 
   .slogan {
