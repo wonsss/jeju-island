@@ -207,7 +207,6 @@ footer {
 
   section {
     height: 445px;
-
     column-gap: 51px;
     row-gap: 10px;
   }
@@ -252,6 +251,7 @@ footer {
   nav {
     padding: 13px 32px;
   }
+
   .hero-header {
     padding: 28px 32px 0px 32px;
   }
@@ -262,7 +262,7 @@ footer {
   }
 
   .cta-long {
-    width: 20rem;
+    width: 200px;
     padding: 10px 16px;
   }
 
@@ -277,12 +277,14 @@ footer {
     width: 100%;
     padding: 40px 32px;
     row-gap: 24px;
+    justify-content: center;
+    align-content: center;
 
     grid-template:
       'title'
       'image'
       'description'
-      /291px;
+      /1fr;
   }
 
   .title {
@@ -296,14 +298,16 @@ footer {
   }
 
   .content-image {
-    width: 325px;
-    height: 266px;
+    margin-left: 32px;
+    margin-right: 32px;
+    width: calc(100% - 64px);
+    height: auto;
   }
 
   .footer-box {
     justify-items: start;
     align-content: space-between;
-    row-gap: 6rem;
+    row-gap: 60px;
     padding: 32px 32px 64px 32px;
 
     grid-template:
