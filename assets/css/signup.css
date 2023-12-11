@@ -162,7 +162,7 @@ input ~ label {
 /* mobie */
 @media screen AND (min-width: 357px) and (max-width: 767px) {
   body {
-    padding: 12rem 3.2rem;
+    padding: 120px 32px;
   }
 
   .signup_layout,
