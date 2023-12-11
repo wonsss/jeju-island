@@ -147,7 +147,7 @@ section:nth-of-type(even) {
 footer {
   width: 100%;
   height: 160px;
-  padding-top: 32px;
+  padding: 32px 104px 64px 104px;
   background-color: #111322;
 }
 
@@ -170,7 +170,6 @@ footer {
   grid-area: footer-links;
   display: flex;
   column-gap: 30px;
-  padding-right: 18px;
 }
 
 .footer-link {
@@ -304,19 +303,20 @@ footer {
     height: auto;
   }
 
-  .footer-box {
-    justify-items: start;
-    align-content: space-between;
-    row-gap: 60px;
+  footer {
     padding: 32px 32px 64px 32px;
-
-    grid-template:
-      'footer-links sns'
-      'copyright .'
-      /1fr 1fr;
   }
 
-  .footer-box > .sns {
-    justify-self: center;
+  .footer-box {
+    justify-content: space-between;
+    row-gap: 60px;
+    grid-template:
+      'footer-links sns'
+      'copyright .';
+    width: 100%;
+  }
+
+  .footer-box > .copyright {
+    justify-self: flex-start;
   }
 }
