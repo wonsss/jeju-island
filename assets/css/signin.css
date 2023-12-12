@@ -1,5 +1,5 @@
 @import 'reset.css';
-
+@import 'color.css';
 body {
   background: var(--linkbrary-bg, #f0f6ff);
   display: flex;
@@ -11,6 +11,7 @@ body {
   align-items: center;
 }
 
+/* [HEADER] header 레이아웃 설정 */
 .header {
   display: flex;
   flex-direction: column;
@@ -18,22 +19,17 @@ body {
   align-items: center;
   gap: 16px;
 }
-.header__logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.header__logo img {
-  width: 210.583px;
-  height: 38px;
-}
 
 .header__content {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 8px;
+}
+
+.header__logo img {
+  width: 210.583px;
+  height: 38px;
 }
 
 .header__content__p {
@@ -50,15 +46,31 @@ body {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  text-decoration: underline;
 }
 
-#login-form {
+/* [Form] loginform 레이아웃 설정 */
+#login-form,
+.pw-input-box {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
+.pw-input-box {
+  position: relative;
+}
+.toggle-password {
+  background-color: white;
+  border: none;
+}
+
+.pw-input-box .toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 40%;
+}
+
+/* [Form] loginform 꾸미기 */
 #login-form label {
   color: var(--black, #000);
   font-family: Pretendard;
@@ -67,6 +79,8 @@ body {
   font-weight: 400;
   line-height: normal;
 }
+
+/* [Form][input] input box 꾸미기 */
 #login-form input {
   width: 400px;
   padding: 18px 15px;
@@ -81,17 +95,6 @@ body {
   line-height: 24px; /* 150% */
 }
 
-#login-form input:not([type='submit']) {
-  margin-bottom: 24px;
-}
-#login-form label {
-  margin-bottom: 12px;
-}
-
-input ~ label {
-  margin-bottom: 0;
-}
-
 #login-form input[type='submit'] {
   width: 400px;
   padding: 16px 20px;
@@ -104,9 +107,25 @@ input ~ label {
   font-weight: 600;
   line-height: normal;
 }
+
+/* [Form][input] input box GAP */
+#login-form input:not([type='submit']) {
+  margin-bottom: 24px;
+}
+#login-form label {
+  margin-bottom: 12px;
+}
+
+input ~ label {
+  margin-bottom: 0;
+}
+
+/* [Form][input] input box 설정 */
 #login-form input:focus {
   outline: 1px solid blue;
 }
+
+/* 소셜 로그인 기능 */
 
 .singin_oauth {
   width: 400px;
@@ -135,4 +154,22 @@ input ~ label {
   justify-content: space-between;
   align-items: center;
   gap: 16px;
+}
+
+/* mobie */
+@media screen AND (min-width: 357px) and (max-width: 767px) {
+  body {
+    padding: 120px 32px;
+  }
+
+  .signin_layout,
+  .singin_oauth {
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+
+  .signin_layout > *,
+  .signin_oauth__icon > * {
+    width: calc(100% - 64px);
+  }
 }

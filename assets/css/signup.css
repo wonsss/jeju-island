@@ -1,4 +1,5 @@
-@import "reset.css";
+@import 'reset.css';
+@import 'color.css';
 
 body {
   background: var(--linkbrary-bg, #f0f6ff);
@@ -80,7 +81,7 @@ body {
   line-height: 24px; /* 150% */
 }
 
-#login-form input:not([type="submit"]) {
+#login-form input:not([type='submit']) {
   margin-bottom: 24px;
 }
 #login-form label {
@@ -91,15 +92,12 @@ input ~ label {
   margin-bottom: 0;
 }
 
-#login-form input[type="submit"] {
+#login-form input[type='submit'] {
   width: 400px;
   padding: 16px 20px;
 
   border-radius: 8px;
-  background: var(
-    --gra-purpleblue-to-skyblue,
-    linear-gradient(91deg, #6d6afe 0.12%, #6ae3fe 101.84%)
-  );
+  background: var(--gra-purpleblue-to-skyblue, linear-gradient(91deg, #6d6afe 0.12%, #6ae3fe 101.84%));
   color: var(--grey-light, #f5f5f5);
   font-size: 18px;
   font-style: normal;
@@ -107,7 +105,7 @@ input ~ label {
   line-height: normal;
 }
 
-#login-form input[name="passwordchk"] {
+#login-form input[name='passwordchk'] {
   outline: 1px solid var(--linkbrary-red, #ff5b56);
 }
 
@@ -120,7 +118,7 @@ input ~ label {
   flex-direction: column;
   gap: 6px;
 }
-#login-form input[name="passwordchk"] {
+#login-form input[name='passwordchk'] {
   margin-bottom: 0;
 }
 
@@ -133,7 +131,7 @@ input ~ label {
   margin-bottom: 30px;
 }
 
-.singin_oauth {
+.singup_oauth {
   width: 400px;
   display: flex;
   flex-direction: row;
@@ -146,7 +144,7 @@ input ~ label {
   background: var(--linkbrary-gray-10, #e7effb);
 }
 
-.singin_oauth > p {
+.singup_oauth > p {
   color: var(--linkbrary-gray-100, #373740);
   font-size: 14px;
   font-style: normal;
@@ -154,9 +152,29 @@ input ~ label {
   line-height: normal;
 }
 
-.signin_oauth__icon {
+.signup_oauth__icon {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 16px;
+}
+
+/* mobie */
+@media screen AND (min-width: 357px) and (max-width: 767px) {
+  body {
+    padding: 120px 32px;
+  }
+
+  .signup_layout,
+  .singup_oauth {
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+
+  .signup_layout input[type='text'],
+  .signup_layout input[type='password'],
+  .signup_layout input[type='submit'],
+  .signup_oauth__icon a {
+    width: calc(100% - 64px);
+  }
 }
