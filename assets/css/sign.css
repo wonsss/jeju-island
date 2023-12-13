@@ -76,7 +76,6 @@ body {
   border-radius: 8px;
   border: 1px solid #ccd5e3;
   font-size: 1.6rem;
-  line-height: 150%;
 }
 
 .sign-password {
@@ -130,18 +129,8 @@ body {
   color: #373740;
 }
 
-@media (min-width: 768px) {
+@media screen AND (min-width: 357px) and (max-width: 767px) {
   body {
-    padding: 200px 0 0;
-  }
-
-  .sign-box {
-    width: 400px;
-  }
-}
-
-@media (min-width: 1200px) {
-  body {
-    padding: 238px 0 0;
+    padding: 120px 32px 120px 32px;
   }
 }
