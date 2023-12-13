@@ -8,14 +8,6 @@ body {
   align-items: center;
   row-gap: 30px;
   padding: 120px 32px 0;
-
-  @media (min-width: 768px) {
-    padding: 200px 0 0;
-  }
-
-  @media (min-width: 1200px) {
-    padding: 238px 0 0;
-  }
 }
 
 .header_container {
