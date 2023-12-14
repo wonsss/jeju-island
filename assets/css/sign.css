@@ -78,6 +78,11 @@ body {
   font-size: 1.6rem;
 }
 
+.sign_box_input p {
+  color: var(--Linkbrary-red, #ff5b56);
+  font-size: 14px;
+}
+
 .sign-password {
   position: relative;
 }
