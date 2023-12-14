@@ -44,6 +44,7 @@ function validateJoin(e) {
   }
 }
 
+// 각종 검증 구현
 function validateEmail(e) {
   const regex =
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
@@ -60,8 +61,7 @@ function validateEmail(e) {
     errorDisplay(e, errorMsg, '이미 사용 중인 이메일입니다.');
     return false;
   } else {
-    errorMsg.innerHTML = '';
-    input_email.classList.remove('input-error');
+    clearDisplay(e, errorMsg);
     return true;
   }
 }
@@ -109,6 +109,7 @@ function verifyUserLogin() {
   return true;
 }
 
+// 메시지 및 css 적용
 function errorDisplay(e, errorMsg, message) {
   errorMsg.innerHTML = message;
   e.target.classList.add('input-error');
