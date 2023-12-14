@@ -17,11 +17,12 @@
     </header>
 
     <div class="sign_box">
-      <form id="login-form" class="sign-form" action="">
+      <form id="sign_form" class="sign-form" action="">
         <div class="sign_box_inputs">
           <div class="sign_box_input">
             <label for="email">이메일</label>
             <input type="text" name="email" id="email" />
+            <p class="error_msg"></p>
           </div>
           <div class="sign_box_input sign-password">
             <label for="password">비밀번호 </label>
@@ -29,6 +30,7 @@
             <button class="eye-button" type="button">
               <img src="/assets/images/signin/eye-off.svg" />
             </button>
+            <p class="error_msg"></p>
           </div>
           <div class="sign_box_input sign-password">
             <label for="password">비밀번호 확인</label>
@@ -36,6 +38,7 @@
             <button class="eye-button" type="button">
               <img src="/assets/images/signin/eye-off.svg" />
             </button>
+            <p class="error_msg"></p>
           </div>
         </div>
         <input type="submit" value="회원가입" />
@@ -49,5 +52,6 @@
         </div>
       </div>
     </div>
+    <script src="/assets/js/sign.js"></script>
   </body>
 </html>
