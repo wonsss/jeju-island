@@ -26,8 +26,8 @@ function validateLogin(e) {
   const userVerified = verifyUserLogin(e);
 
   if (emailValid && passwordValid && userVerified) {
-    sign_form.action = '/folder';
-    sign_form.method = 'post';
+    sign_form.action = '/folder.html';
+    sign_form.method = 'GET';
     sign_form.submit();
   }
 }
