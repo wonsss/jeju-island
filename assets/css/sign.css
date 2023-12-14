@@ -93,10 +93,10 @@ body {
 
 .eye-button {
   position: absolute;
-  bottom: 22px;
+  top: 50px;
   right: 15px;
   width: 16px;
-  height: 40%;
+  height: 16px;
   background-color: transparent;
   border: 0px;
 }
