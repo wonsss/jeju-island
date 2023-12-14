@@ -118,3 +118,18 @@ function clearDisplay(e, errorMsg) {
   errorMsg.innerHTML = '';
   e.target.classList.remove('input-error');
 }
+
+//
+const eyes = document.querySelectorAll('.eye-button');
+
+eyes.forEach(button => {
+  button.addEventListener('click', function () {
+    const img = this.querySelector('img');
+
+    if (img.src.includes('/assets/images/signin/eye-off.svg')) {
+      img.src = '/assets/images/signin/eye-on.svg';
+    } else if (img.src.includes('/assets/images/signin/eye-on.svg')) {
+      img.src = '/assets/images/signin/eye-off.svg';
+    }
+  });
+});
