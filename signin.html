@@ -52,22 +52,75 @@
       const error_msg = document.querySelectorAll('.error_msg');
 
       input_email.addEventListener('focusout', e => {
-        validateEmail(event.target.value);
+        validateEmail(e);
       });
 
-      function validateEmail(email) {
-        console.log(email.length == 0);
+      input_pw.addEventListener('focusout', e => {
+        validatePassWord(e);
+      });
+
+      sign_form.addEventListener('submit', validateLogin);
+
+      function validateLogin(e) {
+        if (validateEmail(e) && validatePassWord(e)) {
+          if (verifyUserLogin) {
+            sign_form.action = '/folder';
+            sign_form.method = 'post';
+            sign_form.submit();
+          }
+        }
+      }
+
+      function validateEmail(e) {
+        e.preventDefault();
         var regex =
           /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 
-        if (email.length == 0) {
+        if (input_email.value.length == 0) {
           error_msg[0].innerHTML = '이메일을 입력해주세요';
+
+          e.target.classList.add('input-error');
           return false;
         }
-        if (regex.test(email) === false) {
+        if (regex.test(input_email.value) === false) {
           error_msg[0].innerHTML = '올바른 이메일 주소가 아닙니다.';
+          e.target.classList.add('input-error');
           return false;
         }
+
+        error_msg[0].innerHTML = '';
+        e.target.classList.remove('input-error');
+
+        return true;
+      }
+
+      function validatePassWord(e) {
+        e.preventDefault();
+        if (input_pw.value.length == 0) {
+          error_msg[1].innerHTML = '비밀번호를 입력해주세요.';
+          e.target.classList.add('input-error');
+          return false;
+        }
+
+        error_msg[1].innerHTML = '';
+        e.target.classList.remove('input-error');
+
+        return true;
+      }
+
+      function verifyUserLogin() {
+        if (input_email.value != 'test@codeit.com' && e.type === 'submit') {
+          error_msg[0].innerHTML = '이메일을 확인해주세요';
+          return false;
+        }
+        if (input_pw.value != 'codeit101' && e.type === 'submit') {
+          error_msg[1].innerHTML = '비밀번호를 확인해주세요';
+          return false;
+        }
+
+        e.target.classList.remove('input-error');
+
+        return true;
       }
     </script>
   </body>
