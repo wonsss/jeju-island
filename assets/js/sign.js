@@ -9,12 +9,12 @@ input_email.addEventListener('focusout', validateEmail);
 input_pw.addEventListener('focusout', validatePassword);
 
 // 로그인 페이지일 때
-if (currentPage === '/signin.html') {
+if (currentPage.includes('signin')) {
   sign_form.addEventListener('submit', validateLogin);
 }
 
 // 회원가입 페이지일 때
-else if (currentPage === '/signup.html') {
+else if (currentPage.includes('signup')) {
   input_pw_chk.addEventListener('focusout', checkPasswordMatch);
   sign_form.addEventListener('submit', validateJoin);
 }
@@ -58,7 +58,7 @@ function validateEmail(e) {
   } else if (!regex.test(email)) {
     errorDisplay(e, errorMsg, '올바른 이메일 주소가 아닙니다.');
     return false;
-  } else if (email == 'test@codeit.com' && currentPage === '/signup.html') {
+  } else if (email == 'test@codeit.com' && currentPage.includes('signup')) {
     errorDisplay(e, errorMsg, '이미 사용 중인 이메일입니다.');
     return false;
   } else {
