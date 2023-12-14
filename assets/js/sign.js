@@ -123,19 +123,21 @@ function clearDisplay(e, errorMsg) {
 }
 
 //비밀번호 눈 모양, input type 변경
-const eyes = document.querySelectorAll('.eye-button');
+function eye_toogle() {
+  const eyes = document.querySelectorAll('.eye-button');
 
-eyes.forEach(button => {
-  button.addEventListener('click', function () {
-    const img = this.querySelector('img');
-    const input = this.previousElementSibling;
+  eyes.forEach(button => {
+    button.addEventListener('click', function () {
+      const img = this.querySelector('img');
+      const input = this.previousElementSibling;
 
-    if (img.src.includes('/assets/images/signin/eye-off.svg')) {
-      img.src = '/assets/images/signin/eye-on.svg';
-      input.type = 'text';
-    } else if (img.src.includes('/assets/images/signin/eye-on.svg')) {
-      img.src = '/assets/images/signin/eye-off.svg';
-      input.type = 'password';
-    }
+      if (img.src.includes('/assets/images/signin/eye-off.svg')) {
+        img.src = '/assets/images/signin/eye-on.svg';
+        input.type = 'text';
+      } else if (img.src.includes('/assets/images/signin/eye-on.svg')) {
+        img.src = '/assets/images/signin/eye-off.svg';
+        input.type = 'password';
+      }
+    });
   });
-});
+}
