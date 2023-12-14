@@ -90,7 +90,7 @@ function checkPasswordMatch(e) {
   const passwordchk = input_pw_chk.value;
 
   if (passwordchk !== password) {
-    errorDisplay(e, errorMsg, '비밀번호는 영문, 숫자 조합 8자 이상 입력해 주세요.');
+    errorDisplay(e, errorMsg, '비밀번호가 일치하지 않아요.');
     return false;
   } else {
     clearDisplay(e, errorMsg);
