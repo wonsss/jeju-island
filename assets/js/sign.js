@@ -19,12 +19,13 @@ else if (currentPage === '/signup.html') {
   sign_form.addEventListener('submit', validateJoin);
 }
 
-function validateLogin() {
+function validateLogin(e) {
   e.preventDefault();
   const emailValid = validateEmail();
   const passwordValid = validatePassword();
+  const userVerified = verifyUserLogin();
 
-  if (emailValid && passwordValid && verifyUserLogin()) {
+  if (emailValid && passwordValid && userVerified) {
     sign_form.action = '/folder';
     sign_form.method = 'post';
     sign_form.submit();
