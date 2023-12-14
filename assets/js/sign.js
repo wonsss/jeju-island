@@ -21,9 +21,9 @@ else if (currentPage === '/signup.html') {
 
 function validateLogin(e) {
   e.preventDefault();
-  const emailValid = validateEmail();
-  const passwordValid = validatePassword();
-  const userVerified = verifyUserLogin();
+  const emailValid = validateEmail(e);
+  const passwordValid = validatePassword(e);
+  const userVerified = verifyUserLogin(e);
 
   if (emailValid && passwordValid && userVerified) {
     sign_form.action = '/folder';
@@ -34,9 +34,9 @@ function validateLogin(e) {
 
 function validateJoin(e) {
   e.preventDefault();
-  const emailValid = validateEmail();
-  const passwordValid = validatePassword();
-  const matchPassword = checkPasswordMatch();
+  const emailValid = validateEmail(e);
+  const passwordValid = validatePassword(e);
+  const matchPassword = checkPasswordMatch(e);
 
   if (emailValid && passwordValid && matchPassword) {
     sign_form.action = '/folder';
@@ -58,7 +58,7 @@ function validateEmail(e) {
   } else if (!regex.test(email)) {
     errorDisplay(e, errorMsg, '올바른 이메일 주소가 아닙니다.');
     return false;
-  } else if (email == 'test@codeit.com') {
+  } else if (email == 'test@codeit.com' && currentPage === '/signup.html') {
     errorDisplay(e, errorMsg, '이미 사용 중인 이메일입니다.');
     return false;
   } else {
