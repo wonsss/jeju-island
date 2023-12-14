@@ -101,10 +101,12 @@ function checkPasswordMatch(e) {
 function verifyUserLogin() {
   if (input_email.value !== 'test@codeit.com') {
     error_msgs[0].innerHTML = '이메일을 확인해주세요';
+    input_email.classList.add('input-error');
     return false;
   }
   if (input_pw.value !== 'codeit101') {
     error_msgs[1].innerHTML = '비밀번호를 확인해주세요';
+    input_pw.classList.add('input-error');
     return false;
   }
   return true;
@@ -120,7 +122,7 @@ function clearDisplay(e, errorMsg) {
   e.target.classList.remove('input-error');
 }
 
-//
+//비밀번호 눈 모양, input type 변경
 const eyes = document.querySelectorAll('.eye-button');
 
 eyes.forEach(button => {
