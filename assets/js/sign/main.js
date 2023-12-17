@@ -1,6 +1,7 @@
 import sign from './sign.js';
-import { validateEmail, validatePassword, checkPasswordMatch, validateLogin, validateJoin } from './validation.js';
+import { validateEmail, validatePassword, checkPasswordMatch } from './validation.js';
 import { eye_toogle } from './ui.js';
+import { validateLogin, validateJoin } from './form.js';
 
 const currentPage = sign.currentPage;
 

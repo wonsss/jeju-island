@@ -52,7 +52,7 @@ export function checkPasswordMatch(e, sign) {
   }
 }
 
-function verifyUserLogin(sign) {
+export function verifyUserLogin(sign) {
   const email = sign.inputEmail;
   const password = sign.inputPassword.value;
 
@@ -67,30 +67,4 @@ function verifyUserLogin(sign) {
     return false;
   }
   return true;
-}
-
-export function validateLogin(e, sign) {
-  e.preventDefault();
-  const emailValid = validateEmail(e, sign);
-  const passwordValid = validatePassword(e, sign);
-  const userVerified = verifyUserLogin(sign);
-
-  if (emailValid && passwordValid && userVerified) {
-    sign_form.action = '/folder.html';
-    sign_form.method = 'GET';
-    sign_form.submit();
-  }
-}
-
-export function validateJoin(e, sign) {
-  e.preventDefault();
-  const emailValid = validateEmail(e, sign);
-  const passwordValid = validatePassword(e, sign);
-  const matchPassword = checkPasswordMatch(e, sign);
-
-  if (emailValid && passwordValid && matchPassword) {
-    sign_form.action = '/folder';
-    sign_form.method = 'post';
-    sign_form.submit();
-  }
 }
