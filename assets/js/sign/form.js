@@ -8,7 +8,7 @@ export function validateLogin(e, sign) {
 
   if (emailValid && passwordValid && userVerified) {
     sign_form.action = '/folder.html';
-    sign_form.method = 'GET';
+    sign_form.method = 'POST';
     sign_form.submit();
   }
 }
@@ -21,8 +21,8 @@ export function validateJoin(e, sign) {
   const matchPassword = checkPasswordMatch(e, sign);
 
   if (emailValid && passwordValid && matchPassword) {
-    sign_form.action = '/folder';
-    sign_form.method = 'post';
+    sign_form.action = '/folder.html';
+    sign_form.method = 'POST';
     sign_form.submit();
   }
 }

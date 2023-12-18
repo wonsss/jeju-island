@@ -12,7 +12,7 @@ export function validateEmail(e, sign) {
   } else if (!regex.test(email)) {
     errorDisplay(e, errorMsg, '올바른 이메일 주소가 아닙니다.');
     return false;
-  } else if (email == 'test@codeit.com' && currentPage.includes('signup')) {
+  } else if (email == 'test@codeit.com' && sign.currentPage.includes('signup')) {
     errorDisplay(e, errorMsg, '이미 사용 중인 이메일입니다.');
     return false;
   } else {
@@ -54,13 +54,14 @@ export function checkPasswordMatch(e, sign) {
 
 export function verifyUserLogin(sign) {
   const email = sign.inputEmail;
-  const password = sign.inputPassword.value;
+  const password = sign.inputPassword;
 
   if (email.value !== 'test@codeit.com') {
     sign.errorMessages[0].innerHTML = '이메일을 확인해주세요';
     email.classList.add('input-error');
     return false;
   }
+  console.log(password);
   if (password.value !== 'codeit101') {
     sign.errorMessages[1].innerHTML = '비밀번호를 확인해주세요';
     password.classList.add('input-error');
