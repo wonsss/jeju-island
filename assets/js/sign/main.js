@@ -3,7 +3,7 @@ import { validateEmail, validatePassword, checkPasswordMatch } from './validatio
 import { eye_toogle } from './ui.js';
 import { validateLogin, validateJoin } from './form.js';
 
-const currentPage = sign.currentPage;
+const { currentPage } = sign;
 
 sign.inputEmail.addEventListener('focusout', event => validateEmail(event, sign));
 sign.inputPassword.addEventListener('focusout', event => validatePassword(event, sign));

@@ -9,9 +9,9 @@ export function clearDisplay(e, errorMsg) {
   e.target.classList.remove('input-error');
 }
 
-//비밀번호 눈 모양, input type 변경
+// 비밀번호 눈 모양, input type 변경
 export function eye_toogle(sign) {
-  const eyes = sign.eyes;
+  const { eyes } = sign;
 
   eyes.forEach(button => {
     button.addEventListener('click', function () {

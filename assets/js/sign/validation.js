@@ -9,16 +9,17 @@ export function validateEmail(e, sign) {
   if (email.length === 0) {
     errorDisplay(e, errorMsg, '이메일을 입력해주세요');
     return false;
-  } else if (!regex.test(email)) {
+  }
+  if (!regex.test(email)) {
     errorDisplay(e, errorMsg, '올바른 이메일 주소가 아닙니다.');
     return false;
-  } else if (email == 'test@codeit.com' && sign.currentPage.includes('signup')) {
+  }
+  if (email == 'test@codeit.com' && sign.currentPage.includes('signup')) {
     errorDisplay(e, errorMsg, '이미 사용 중인 이메일입니다.');
     return false;
-  } else {
-    clearDisplay(e, errorMsg);
-    return true;
   }
+  clearDisplay(e, errorMsg);
+  return true;
 }
 
 export function validatePassword(e, sign) {
@@ -29,13 +30,13 @@ export function validatePassword(e, sign) {
   if (password.length === 0) {
     errorDisplay(e, errorMsg, '비밀번호를 입력해주세요.');
     return false;
-  } else if (!regex.test(password)) {
+  }
+  if (!regex.test(password)) {
     errorDisplay(e, errorMsg, '비밀번호는 영문, 숫자 조합 8자 이상 입력해 주세요.');
     return false;
-  } else {
-    clearDisplay(e, errorMsg);
-    return true;
   }
+  clearDisplay(e, errorMsg);
+  return true;
 }
 
 export function checkPasswordMatch(e, sign) {
@@ -46,10 +47,9 @@ export function checkPasswordMatch(e, sign) {
   if (passwordchk !== password) {
     errorDisplay(e, errorMsg, '비밀번호가 일치하지 않아요.');
     return false;
-  } else {
-    clearDisplay(e, errorMsg);
-    return true;
   }
+  clearDisplay(e, errorMsg);
+  return true;
 }
 
 export function verifyUserLogin(sign) {
