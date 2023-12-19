@@ -1,20 +1,20 @@
 // 메시지 및 css 적용
-export function showErrorMessage(source, errorMessage) {
-  const errorBorderElement = errorMessageElementFind(source);
-  const errorMessageElement = errorBorderElement.parentElement.querySelector('.error_msg');
+export function showErrorMessage(tag, errorMessage) {
+  const target = tag.parentElement.querySelector('.error_msg');
+  const inputBorder = target.parentElement.querySelector('input');
 
-  errorBorderElement.classList.add('input-error');
-  errorMessageElement.innerHTML = errorMessage;
+  inputBorder.classList.add('input-error');
+  target.innerHTML = errorMessage;
 
   return false;
 }
 
-export function clearErrorMessage(source) {
-  const errorBorderElement = errorMessageElementFind(source);
-  const errorMessageElement = errorBorderElement.parentElement.querySelector('.error_msg');
+export function clearErrorMessage(tag) {
+  const target = tag.parentElement.querySelector('.error_msg');
+  const inputBorder = target.parentElement.querySelector('input');
 
-  errorBorderElement.classList.remove('input-error');
-  errorMessageElement.innerHTML = '';
+  inputBorder.classList.remove('input-error');
+  target.innerHTML = '';
 
   return true;
 }
@@ -28,8 +28,4 @@ export function eyeToggle(e) {
 
   eyeButton.classList.toggle('eye-on');
   eyeButton.classList.toggle('eye-off');
-}
-
-function errorMessageElementFind(source) {
-  return source instanceof Event ? source.target.parentElement.querySelector('input') : source.parentElement.querySelector('input');
 }

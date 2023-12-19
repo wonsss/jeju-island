@@ -1,4 +1,4 @@
-import { validateEmail, checkEmailRegistered, validatePassword, checkPasswordMatch } from './validation.js';
+import { validateEmail, checkEmailRegistered, validatePassword, validatePasswordCheck } from './validation.js';
 import { eyeToggle } from './ui.js';
 import { validateJoin } from './form.js';
 
@@ -12,7 +12,8 @@ inputEmail.addEventListener('focusout', event => validateEmail(event));
 inputEmail.addEventListener('focusout', event => checkEmailRegistered(event));
 
 inputPassword.addEventListener('focusout', event => validatePassword(event));
-inputPasswordCheck.addEventListener('focusout', event => checkPasswordMatch(event));
+inputPasswordCheck.addEventListener('focusout', event => validatePasswordCheck(event));
+
 signForm.addEventListener('submit', event => validateJoin(event));
 
 eyes.forEach(button => {

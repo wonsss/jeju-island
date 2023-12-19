@@ -1,10 +1,10 @@
-import { validateEmail, validatePassword, checkPasswordMatch, verifyUserLogin } from './validation.js';
+import { validateEmail, validatePassword, verifyUserLogin, validatePasswordCheck } from './validation.js';
 
 export function validateLogin(e) {
   e.preventDefault();
-  const emailValid = validateEmail(e);
-  const passwordValid = validatePassword(e);
-  const userVerified = verifyUserLogin(e);
+  const emailValid = validateEmail();
+  const passwordValid = validatePassword();
+  const userVerified = verifyUserLogin();
 
   if (emailValid && passwordValid && userVerified) {
     e.target.submit();
@@ -12,13 +12,13 @@ export function validateLogin(e) {
 }
 
 // signup.html
-export function validateJoin(e) {
+export function validateJoin() {
   e.preventDefault();
-  const emailValid = validateEmail(e);
-  const passwordValid = validatePassword(e);
-  const matchPassword = checkPasswordMatch(e);
+  const emailValid = validateEmail();
+  const passwordValid = validatePassword();
+  const passwordCheckValid = validatePasswordCheck();
 
-  if (emailValid && passwordValid && matchPassword) {
+  if (emailValid && passwordValid && passwordCheckValid) {
     e.target.submit();
   }
 }
