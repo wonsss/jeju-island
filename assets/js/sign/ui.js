@@ -8,11 +8,11 @@ export function showErrorMessage(source, errorMessage) {
   return false;
 }
 
-export function clearErrorMessage(event) {
-  const errorTag = event.target.parentElement.querySelector('.error_msg');
+export function clearErrorMessage(source) {
+  const errorMessageElement = errorMessageElementFind(source);
 
-  errorTag.innerHTML = '';
-  errorTag.classList.remove('input-error');
+  errorMessageElement.innerHTML = '';
+  errorMessageElement.classList.remove('input-error');
 
   return true;
 }
