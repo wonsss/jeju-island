@@ -1,71 +1,64 @@
-import { errorDisplay, clearDisplay } from './ui.js';
+import { showErrorMessage, clearErrorMessage } from './ui.js';
+import { emailRegex, passwordRegex } from '../regex.js';
+import handleError from './errorMessage.js';
+import { USER_EMAIL, USER_PASSWORD } from '../../../config.js';
 
-export function validateEmail(e, sign) {
-  const errorMsg = sign.errorMessages[0];
-  const email = sign.inputEmail.value;
-  const regex =
-    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+export function validateEmail(e) {
+  const email = e.target.value;
 
   if (email.length === 0) {
-    errorDisplay(e, errorMsg, '이메일을 입력해주세요');
-    return false;
+    return showErrorMessage(e, handleError('EMPTY_EMAIL_FIELD'));
   }
-  if (!regex.test(email)) {
-    errorDisplay(e, errorMsg, '올바른 이메일 주소가 아닙니다.');
-    return false;
+
+  if (!emailRegex.test(email)) {
+    return showErrorMessage(e, handleError('INVALID_EMAIL'));
   }
-  if (email == 'test@codeit.com' && sign.currentPage.includes('signup')) {
-    errorDisplay(e, errorMsg, '이미 사용 중인 이메일입니다.');
-    return false;
-  }
-  clearDisplay(e, errorMsg);
-  return true;
+
+  return clearErrorMessage(e);
 }
 
-export function validatePassword(e, sign) {
-  const regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
-  const errorMsg = sign.errorMessages[1];
-  const password = sign.inputPassword.value;
+export function checkEmailRegistered(e) {
+  const email = e.target.value;
+
+  if (email === USER_EMAIL) {
+    return showErrorMessage(e, handleError('EMAIL_REGISTERED'));
+  }
+}
+
+export function validatePassword(e) {
+  const password = e.target.value;
 
   if (password.length === 0) {
-    errorDisplay(e, errorMsg, '비밀번호를 입력해주세요.');
-    return false;
+    return showErrorMessage(e, handleError('EMPTY_PASSWORD_FIELD'));
   }
-  if (!regex.test(password)) {
-    errorDisplay(e, errorMsg, '비밀번호는 영문, 숫자 조합 8자 이상 입력해 주세요.');
-    return false;
+  if (!passwordRegex.test(password)) {
+    return errorDisplay(e, handleError('PASSWORD_TOO_SHORT'));
   }
-  clearDisplay(e, errorMsg);
-  return true;
+
+  return clearErrorMessage(e);
 }
 
-export function checkPasswordMatch(e, sign) {
-  const errorMsg = sign.errorMessages[2];
-  const password = sign.inputPassword.value;
-  const passwordchk = sign.inputPasswordCheck.value;
+export function checkPasswordMatch(e) {
+  const password = document.querySelector('#password').value;
+  const reEnteredPassword = document.querySelector('#password_chk').value;
 
-  if (passwordchk !== password) {
-    errorDisplay(e, errorMsg, '비밀번호가 일치하지 않아요.');
-    return false;
+  if (reEnteredPassword !== password) {
+    return showErrorMessage(e, handleError('PASSWORD_NOT_MATCH'));
   }
-  clearDisplay(e, errorMsg);
-  return true;
+
+  return clearErrorMessage(e);
 }
 
-export function verifyUserLogin(sign) {
-  const email = sign.inputEmail;
-  const password = sign.inputPassword;
+export function verifyUserLogin(e) {
+  const email = document.querySelector('#email');
+  const password = document.getElementById('password');
 
-  if (email.value !== 'test@codeit.com') {
-    sign.errorMessages[0].innerHTML = '이메일을 확인해주세요';
-    email.classList.add('input-error');
-    return false;
+  if (email.value !== USER_EMAIL) {
+    return showErrorMessage(email, handleError('EMAIL_NOT_FOUND'));
   }
-  console.log(password);
-  if (password.value !== 'codeit101') {
-    sign.errorMessages[1].innerHTML = '비밀번호를 확인해주세요';
-    password.classList.add('input-error');
-    return false;
+
+  if (password.value !== USER_PASSWORD) {
+    return showErrorMessage(password, handleError('PASSWORD_NOT_MATCH'));
   }
   return true;
 }

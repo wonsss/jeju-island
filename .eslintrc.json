@@ -4,5 +4,11 @@
   "rules": {
     "prettier/prettier": ["error", { "endOfLine": "auto" }],
     "camelcase": ["error", { "properties": "always" }]
-  }
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+
+  "import/extensions": ["error", "always"]
 }

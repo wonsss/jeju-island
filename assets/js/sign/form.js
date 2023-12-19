@@ -1,28 +1,24 @@
 import { validateEmail, validatePassword, checkPasswordMatch, verifyUserLogin } from './validation.js';
-// signin.html
-export function validateLogin(e, sign) {
+
+export function validateLogin(e) {
   e.preventDefault();
-  const emailValid = validateEmail(e, sign);
-  const passwordValid = validatePassword(e, sign);
-  const userVerified = verifyUserLogin(sign);
+  const emailValid = validateEmail();
+  const passwordValid = validatePassword();
+  const userVerified = verifyUserLogin();
 
   if (emailValid && passwordValid && userVerified) {
-    sign_form.action = '/folder.html';
-    sign_form.method = 'POST';
-    sign_form.submit();
+    e.target.submit();
   }
 }
 
 // signup.html
-export function validateJoin(e, sign) {
+export function validateJoin(e) {
   e.preventDefault();
-  const emailValid = validateEmail(e, sign);
-  const passwordValid = validatePassword(e, sign);
-  const matchPassword = checkPasswordMatch(e, sign);
+  const emailValid = validateEmail(e);
+  const passwordValid = validatePassword(e);
+  const matchPassword = checkPasswordMatch(e);
 
   if (emailValid && passwordValid && matchPassword) {
-    sign_form.action = '/folder.html';
-    sign_form.method = 'POST';
-    sign_form.submit();
+    e.target.submit();
   }
 }

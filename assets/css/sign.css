@@ -100,7 +100,13 @@ body {
   background-color: transparent;
   border: 0px;
 }
+.eye-off {
+  background-image: url('/assets/images/signin/eye-off.svg');
+}
 
+.eye-on {
+  background-image: url('/assets/images/signin/eye-on.svg');
+}
 .sign-form input[type='submit'] {
   display: flex;
   justify-content: center;

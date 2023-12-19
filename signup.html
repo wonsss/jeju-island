@@ -17,7 +17,7 @@
     </header>
 
     <div class="sign_box">
-      <form id="sign_form" class="sign-form" action="">
+      <form id="sign_form" class="sign-form" action="/folder.html" , method="post">
         <div class="sign_box_inputs">
           <div class="sign_box_input">
             <label for="email">이메일</label>
@@ -27,17 +27,13 @@
           <div class="sign_box_input sign-password">
             <label for="password">비밀번호 </label>
             <input type="password" name="password" id="password" />
-            <button class="eye-button" type="button">
-              <img src="/assets/images/signin/eye-off.svg" />
-            </button>
+            <button class="eye-button eye-on" type="button"></button>
             <p class="error_msg"></p>
           </div>
           <div class="sign_box_input sign-password">
             <label for="password">비밀번호 확인</label>
             <input type="password" name="password_chk" id="password_chk" />
-            <button class="eye-button" type="button">
-              <img src="/assets/images/signin/eye-off.svg" />
-            </button>
+            <button class="eye-button eye-on" type="button"></button>
             <p class="error_msg"></p>
           </div>
         </div>
@@ -52,6 +48,6 @@
         </div>
       </div>
     </div>
-    <script type="module" src="/assets/js/sign/main.js"></script>
+    <script type="module" src="/assets/js/sign/signup.js"></script>
   </body>
 </html>
