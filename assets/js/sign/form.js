@@ -2,9 +2,9 @@ import { validateEmail, validatePassword, checkPasswordMatch, verifyUserLogin } 
 
 export function validateLogin(e) {
   e.preventDefault();
-  const emailValid = validateEmail();
-  const passwordValid = validatePassword();
-  const userVerified = verifyUserLogin();
+  const emailValid = validateEmail(e);
+  const passwordValid = validatePassword(e);
+  const userVerified = verifyUserLogin(e);
 
   if (emailValid && passwordValid && userVerified) {
     e.target.submit();

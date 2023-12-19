@@ -4,7 +4,7 @@ import handleError from './errorMessage.js';
 import { USER_EMAIL, USER_PASSWORD } from '../../../config.js';
 
 export function validateEmail(e) {
-  const email = e.target.value;
+  const email = document.querySelector('#email').value;
 
   if (email.length === 0) {
     return showErrorMessage(e, handleError('EMPTY_EMAIL_FIELD'));
@@ -18,7 +18,7 @@ export function validateEmail(e) {
 }
 
 export function checkEmailRegistered(e) {
-  const email = e.target.value;
+  const email = document.querySelector('#email').value;
 
   if (email === USER_EMAIL) {
     return showErrorMessage(e, handleError('EMAIL_REGISTERED'));
@@ -26,7 +26,7 @@ export function checkEmailRegistered(e) {
 }
 
 export function validatePassword(e) {
-  const password = e.target.value;
+  const password = document.querySelector('#password').value;
 
   if (password.length === 0) {
     return showErrorMessage(e, handleError('EMPTY_PASSWORD_FIELD'));
@@ -51,7 +51,7 @@ export function checkPasswordMatch(e) {
 
 export function verifyUserLogin(e) {
   const email = document.querySelector('#email');
-  const password = document.getElementById('password');
+  const password = document.querySelector('#password');
 
   if (email.value !== USER_EMAIL) {
     return showErrorMessage(email, handleError('EMAIL_NOT_FOUND'));
