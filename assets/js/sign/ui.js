@@ -1,18 +1,20 @@
 // 메시지 및 css 적용
 export function showErrorMessage(source, errorMessage) {
-  const errorMessageElement = errorMessageElementFind(source);
+  const errorBorderElement = errorMessageElementFind(source);
+  const errorMessageElement = errorBorderElement.parentElement.querySelector('input');
 
+  errorBorderElement.classList.add('input-error');
   errorMessageElement.innerHTML = errorMessage;
-  errorMessageElement.classList.add('input-error');
 
   return false;
 }
 
 export function clearErrorMessage(source) {
-  const errorMessageElement = errorMessageElementFind(source);
+  const errorBorderElement = errorMessageElementFind(source);
+  const errorMessageElement = errorBorderElement.parentElement.querySelector('input');
 
+  errorBorderElement.classList.remove('input-error');
   errorMessageElement.innerHTML = '';
-  errorMessageElement.classList.remove('input-error');
 
   return true;
 }
@@ -29,7 +31,5 @@ export function eyeToggle(e) {
 }
 
 function errorMessageElementFind(source) {
-  return source instanceof Event
-    ? source.target.parentElement.querySelector('.error_msg')
-    : source.parentElement.querySelector('.error_msg');
+  return source instanceof Event ? source.target.parentElement.querySelector('input') : source.parentElement.querySelector('input');
 }
