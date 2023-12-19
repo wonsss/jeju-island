@@ -1,7 +1,7 @@
 // 메시지 및 css 적용
 export function showErrorMessage(source, errorMessage) {
   const errorBorderElement = errorMessageElementFind(source);
-  const errorMessageElement = errorBorderElement.parentElement.querySelector('input');
+  const errorMessageElement = errorBorderElement.parentElement.querySelector('.error_msg');
 
   errorBorderElement.classList.add('input-error');
   errorMessageElement.innerHTML = errorMessage;
@@ -11,7 +11,7 @@ export function showErrorMessage(source, errorMessage) {
 
 export function clearErrorMessage(source) {
   const errorBorderElement = errorMessageElementFind(source);
-  const errorMessageElement = errorBorderElement.parentElement.querySelector('input');
+  const errorMessageElement = errorBorderElement.parentElement.querySelector('.error_msg');
 
   errorBorderElement.classList.remove('input-error');
   errorMessageElement.innerHTML = '';
