@@ -32,7 +32,7 @@ export function validatePassword(e) {
     return showErrorMessage(e, handleError('EMPTY_PASSWORD_FIELD'));
   }
   if (!passwordRegex.test(password)) {
-    return errorDisplay(e, handleError('PASSWORD_TOO_SHORT'));
+    return showErrorMessage(e, handleError('PASSWORD_TOO_SHORT'));
   }
 
   return clearErrorMessage(e);
