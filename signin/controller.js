@@ -6,16 +6,19 @@ export default class SignInController {
   constructor(model, view) {
     this.model = model;
     this.view = view;
-
-    this.view.inputEmail.addEventListener('focusout', () => this.validateEmail());
-    this.view.inputPassword.addEventListener('focusout', () => this.validatePassword());
-    this.view.eyes.forEach(button => {
-      button.addEventListener('click', e => this.eyeToggle(e));
-    });
-    this.view.signForm.addEventListener('submit', e => this.validateLogin(e));
+    this.#initEventListeners();
   }
 
-  validateEmail() {
+  #initEventListeners() {
+    this.view.inputEmail.addEventListener('focusout', () => this.#validateEmail());
+    this.view.inputPassword.addEventListener('focusout', () => this.#validatePassword());
+    this.view.eyes.forEach(button => {
+      button.addEventListener('click', e => this.view.eyeToggle(e));
+    });
+    this.view.signForm.addEventListener('submit', e => this.#validateLogin(e));
+  }
+
+  #validateEmail() {
     const emailValue = this.view.inputEmail.value;
 
     if (emailValue.length === 0) {
@@ -32,7 +35,7 @@ export default class SignInController {
     return true;
   }
 
-  validatePassword() {
+  #validatePassword() {
     const passwordValue = this.view.inputPassword.value;
 
     if (passwordValue.length === 0) {
@@ -49,10 +52,10 @@ export default class SignInController {
     return true;
   }
 
-  validateLogin(e) {
+  #validateLogin(e) {
     e.preventDefault();
-    const emailValid = this.validateEmail();
-    const passwordValid = this.validatePassword();
+    const emailValid = this.#validateEmail();
+    const passwordValid = this.#validatePassword();
     const emailValue = this.view.inputEmail.value;
     const passwordValue = this.view.inputPassword.value;
     const userVerified = this.model.verifyUserLogin(emailValue, passwordValue);
@@ -67,15 +70,5 @@ export default class SignInController {
     }
 
     e.target.submit();
-  }
-
-  eyeToggle(e) {
-    const eyeButton = e.target;
-    const input = eyeButton.parentElement.querySelector('input');
-
-    input.type = input.type === 'password' ? 'text' : 'password';
-
-    eyeButton.classList.toggle('eye-on');
-    eyeButton.classList.toggle('eye-off');
   }
 }

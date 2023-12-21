@@ -21,4 +21,14 @@ export default class SignInView {
     inputBorder.classList.remove('input-error');
     target.innerHTML = '';
   }
+
+  eyeToggle(e) {
+    const eyeButton = e.target;
+    const input = eyeButton.parentElement.querySelector('input');
+
+    input.type = input.type === 'password' ? 'text' : 'password';
+
+    eyeButton.classList.toggle('eye-on');
+    eyeButton.classList.toggle('eye-off');
+  }
 }
