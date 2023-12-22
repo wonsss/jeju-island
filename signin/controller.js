@@ -10,12 +10,12 @@ export default class SignInController {
   }
 
   #initEventListeners() {
-    this.view.inputEmail.addEventListener('focusout', () => this.#validateEmail());
-    this.view.inputPassword.addEventListener('focusout', () => this.#validatePassword());
+    this.view.inputEmail.addEventListener('focusout', this.#validateEmail.bind(this));
+    this.view.inputPassword.addEventListener('focusout', this.#validatePassword.bind(this));
     this.view.eyes.forEach(button => {
-      button.addEventListener('click', e => this.view.eyeToggle(e));
+      button.addEventListener('click', this.view.eyeToggle);
     });
-    this.view.signForm.addEventListener('submit', e => this.#validateLogin(e));
+    this.view.signForm.addEventListener('submit', this.#validateLogin.bind(this));
   }
 
   #validateEmail() {
@@ -69,6 +69,6 @@ export default class SignInController {
       return;
     }
 
-    e.target.submit();
+    this.view.signForm.submit();
   }
 }
